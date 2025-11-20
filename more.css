@@ -1,0 +1,165 @@
+/* General Body and Container Setup */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #333;
+    display: flex;
+    justify-content: center; /* Center the grid horizontally */
+    align-items: center; /* Center the grid vertically */
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative; /* Useful for general context, though home-button uses fixed */
+}
+
+/* Home Button Styling (Small, fixed top-left, uses specific code structure) */
+.home-button {
+    position: fixed; /* Ensures it stays in place and does not affect gallery layout */
+    top: 20px;
+    left: 20px;
+    
+    /* Making it small as requested */
+    padding: 6px 12px; 
+    font-size: 14px;
+    
+    /* Style based on the reference code (2nd picture style) */
+    background-color: #262826; /* Green color */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px; /* Slightly smaller radius */
+    z-index: 1000; /* Ensures it stays above the gallery */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.home-button:hover {
+    background-color: #45a049;
+}
+
+/* Gallery Grid Definition */
+.gallery-container {
+    /* Based on the visual layout, using a 12x10 grid for maximum flexibility */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    gap: 10px; /* Reduced gap slightly for a tighter fit like the image */
+    width: 100%;
+    max-width: 1200px;
+    height: 75vh; /* Use view height to make it fill the screen better */
+    min-height: 600px;
+}
+
+.gallery-item {
+    background-color: #444;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Do not apply any filters like grayscale as requested */
+}
+
+/* Item Placement Mapping to the Reference Image (Using 12x10 grid) */
+
+/* 1. Top-Left: Two women posing (Squarish, slightly wider than tall) */
+.item-1 {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 3;
+}
+
+/* 2. Mid-Left Alleyway (Tall, next to 1) */
+.item-2 {
+    grid-column: 1 / span 3;
+    grid-row: 4 / span 4;
+}
+
+/* 3. Bottom-Left Jumper (Wide, inverted view) */
+.item-3 {
+    grid-column: 1 / span 4;
+    grid-row: 8 / span 3;
+}
+
+/* 4. Center Church Tower (Tall, narrow) */
+.item-4 {
+    grid-column: 4 / span 2;
+    grid-row: 1 / span 7;
+}
+
+/* 5. Center-Mid Raised Fists (Tall, next to church) */
+.item-5 {
+    grid-column: 6 / span 2;
+    grid-row: 1 / span 7;
+}
+
+/* 6. Top-Right Sparkly Women (Small, top right block 1) */
+.item-6 {
+    grid-column: 8 / span 2;
+    grid-row: 1 / span 3;
+}
+
+/* 7. Mid-Right Embrace (Tall, next to 6) */
+.item-7 {
+    grid-column: 8 / span 2;
+    grid-row: 4 / span 5;
+}
+
+/* 8. Far Right Walkers (Tall, next to 6 & 7) */
+.item-8 {
+    grid-column: 10 / span 3;
+    grid-row: 1 / span 8;
+}
+
+/* 9. Center-Bottom Child (Wide, below church/fists) */
+.item-9 {
+    grid-column: 5 / span 5;
+    grid-row: 7 / span 4;
+}
+
+/* 10. Bottom-Right Older Man (Wide, next to child) - Using the last space */
+/* Note: The reference image has 9 distinct image slots, plus the child and older man slots. 
+   Assuming the original code meant to fill 9 spots, I've added a 10th for the older man. 
+   If you only have 9 images, remove item-10 and adjust item-9's grid-column. */
+.item-10 {
+    grid-column: 10 / span 3;
+    grid-row: 8 / span 3;
+}
+
+
+/* --- Media Query for Responsiveness --- */
+@media (max-width: 768px) {
+    .gallery-container {
+        /* Stack items vertically on smaller screens */
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto;
+        height: auto;
+        max-width: 90%;
+        gap: 8px;
+    }
+    .gallery-item {
+        /* Force each item to take up the full column width */
+        grid-column: 1 / -1 !important; 
+        grid-row: auto !important;
+        aspect-ratio: 4 / 3; /* A standard aspect ratio for mobile view */
+        min-height: 200px;
+    }
+    body {
+        padding: 10px;
+        /* Remove vertical centering to allow scrolling */
+        align-items: flex-start; 
+    }
+    .home-button {
+        top: 10px;
+        left: 10px;
+        padding: 5px 10px; /* Even smaller on mobile */
+        font-size: 12px;
+    }
+}

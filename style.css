@@ -1,0 +1,313 @@
+/* style.css */
+
+/* --- General Reset and Body Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Dark gray/black background */
+    color: #ffffff; /* White text */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Navigation/Header Styles --- */
+.header {
+    /* CHANGED: Background color set to match body background #1a1a1a */
+    background-color: #1a1a1a; 
+    padding: 15px 0;
+    /* Keeping a subtle line for definition, can be removed if desired */
+    border-bottom: 2px solid #333; 
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 1em;
+}
+
+.menu-icon {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none; /* Hide on desktop */
+}
+
+/* --- Main Content Section Styles --- */
+.main-content {
+    padding: 80px 0;
+    min-height: calc(100vh - 56px); /* Adjust based on header height */
+    display: flex;
+    align-items: center;
+}
+
+/* Common Section Heading */
+.section-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.section-title-line {
+    width: 60px;
+    height: 3px;
+    background-color: #ffffff;
+    margin-bottom: 40px;
+}
+
+/* Placeholder for Images (Full Color, No Adjustments) */
+.image-placeholder {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Specific Page Layouts --- */
+
+/* Home/Portfolio Page (Page 01) */
+.hero-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 50%;
+}
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.hero-title {
+    font-size: 5em;
+    font-weight: 900;
+    margin-bottom: 20px;
+    position: relative;
+    line-height: 1;
+}
+
+.hero-description {
+    max-width: 80%;
+    margin-bottom: 30px;
+    color: #ccc;
+    font-size: 0.95em;
+}
+
+.hero-buttons button, .hero-buttons a {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-right: 15px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.hero-buttons a:hover {
+    background-color: #fff;
+    color: #1a1a1a;
+}
+
+.play-video-icon {
+    font-size: 2em;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/* About the Author Page (Page 02) */
+.about-layout {
+    display: flex;
+    gap: 50px;
+}
+.about-text {
+    flex: 1;
+}
+.about-image {
+    flex: 1;
+    max-width: 50%;
+}
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.about-sub-sections {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+.about-sub-sections div {
+    flex: 1;
+}
+.about-sub-sections h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+/* My Mission Page (Page 05) */
+.mission-layout {
+    display: flex;
+    gap: 50px;
+}
+.mission-list {
+    flex: 1;
+}
+.mission-title {
+    font-size: 3em;
+    margin-bottom: 50px;
+}
+.mission-item {
+    margin-bottom: 30px;
+}
+.mission-item .number {
+    font-size: 2em;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: top;
+}
+.mission-item .text {
+    display: inline-block;
+    width: calc(100% - 70px);
+}
+.mission-images {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.mission-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* My Favorite Portfolio Page (Page 06) */
+.portfolio-grid {
+    display: flex;
+    gap: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+.portfolio-item {
+    flex: 1;
+}
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+.portfolio-item h4 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+.portfolio-item p {
+    color: #ccc;
+}
+
+/* Contact Page Styles */
+.contact-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+}
+.contact-form {
+    flex: 2;
+}
+.contact-info {
+    flex: 1;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+}
+.contact-form button {
+    /* Changed button color to a neutral dark gray since purple header was removed */
+    background-color: #444; 
+    border: none;
+    padding: 15px 30px;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+.contact-form button:hover {
+    background-color: #666;
+}
+.contact-info p {
+    margin-bottom: 15px;
+    color: #ccc;
+}
+.contact-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* --- Page Number Footer --- */
+.page-number {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* Optional: Simple Media Query for Responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links, show icon */
+    }
+    .menu-icon {
+        display: block;
+    }
+    .hero-section, .about-layout, .mission-layout, .contact-layout {
+        flex-direction: column;
+    }
+    .hero-image, .about-image {
+        max-width: 100%;
+        order: -1; /* Image first on mobile */
+    }
+    .portfolio-grid {
+        flex-direction: column;
+    }
+}
